@@ -1,4 +1,0 @@
-Current low RSI Coins:
-
-   ticker  rsi_rate  current_rsi
-13    SNX -0.399461    25.946842
