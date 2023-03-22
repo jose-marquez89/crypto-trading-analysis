@@ -97,8 +97,14 @@ def send_alert():
     
 if __name__ == "__main__":
     while True:
+        interval = 60 * 15
         # run until stopped manually for now
         print(f"Fetching data and running at {datetime.datetime.now()}")
-        send_alert()
-        interval = 60 * 15
-        time.sleep(interval)
+        try:
+            send_alert()
+            time.sleep(interval)
+        except Exception as err:
+            print("There was an error:", err)
+            print("Retrying in 2 minutes")
+            time.sleep(120)
+            
